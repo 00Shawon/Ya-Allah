@@ -6,7 +6,7 @@
   --deep-navy:  #0d1528;
   --navy:       #111c35;
   --navy-light: #1a2845;
-  --gold:       #c9a84c;
+  --gold:       #f1c36f;
   --gold-light: #e8c97a;
   --gold-pale:  #f5e6b8;
   --cream:      #e8dfc8;
@@ -70,8 +70,46 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 .name-card-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.06) 0%,transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
 .name-card:hover .name-card-glow{opacity:1;}
-.name-read-more{opacity:0;transform:translateX(-8px);transition:opacity 0.3s,transform 0.3s;}
-.name-card:hover .name-read-more{opacity:1;transform:translateX(0);}
+.name-read-more{
+  opacity: 1;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--gold);
+  background: rgba(201,168,76,0.1);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.name-read-more:hover{
+  background: var(--gold);
+  color: var(--midnight);
+}
+
+.view-details-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.all-card:hover .view-details-btn {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.05);
+}
 
 .card-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--card-color,#c9a84c) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none;}
 .condition-card:hover .card-bg{opacity:0.05;}
@@ -94,12 +132,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 .filter-scroll {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   overflow-x: auto;
   flex-wrap: nowrap;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-bottom: 4px;
+  padding: 4px 2px 12px;
 }
 .filter-scroll::-webkit-scrollbar {
   display: none;

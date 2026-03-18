@@ -27,12 +27,12 @@ export default function Conditions() {
 
         {/* Header */}
         <div className="animate-in delay-1" style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 64px)' }}>
-          <p style={{ fontFamily: "'Cinzel',serif", fontSize: 10, letterSpacing: '0.4em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: 16 }}>Begin Here</p>
+          <p style={{ fontFamily: "'Cinzel',serif", fontSize: 12, letterSpacing: '0.4em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: 16 }}>Begin Here</p>
           <div style={{ width: 60, height: 1, background: 'linear-gradient(to right, transparent, var(--gold), transparent)', margin: '0 auto 24px' }} />
-          <h1 style={{ fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 300, color: 'var(--white)', lineHeight: 1.3, marginBottom: 20, fontStyle: 'italic' }}>
+          <h1 style={{ fontSize: 'clamp(32px, 6vw, 56px)', fontWeight: 300, color: 'var(--white)', lineHeight: 1.3, marginBottom: 20, fontStyle: 'italic' }}>
             What are you carrying<br />right now?
           </h1>
-          <p style={{ fontSize: 'clamp(15px, 1.8vw, 17px)', color: 'var(--text-mid)', lineHeight: 1.8, fontWeight: 300, maxWidth: 600, margin: '0 auto' }}>
+          <p style={{ fontSize: 'clamp(17px, 2.2vw, 20px)', color: 'var(--text-mid)', lineHeight: 1.8, fontWeight: 300, maxWidth: 650, margin: '0 auto' }}>
             Allah has a name for every state of the heart.<br />
             Choose what is true for you in this moment.
           </p>
@@ -50,7 +50,7 @@ export default function Conditions() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 16,
-                padding: 'clamp(16px, 3vw, 24px)',
+                padding: 'clamp(20px, 4vw, 28px)',
                 background: selected === condition.id ? 'var(--navy-light)' : 'var(--deep-navy)',
                 border: 'none',
                 cursor: 'pointer',
@@ -64,12 +64,12 @@ export default function Conditions() {
               onMouseLeave={e => { if (selected !== condition.id) e.currentTarget.style.background = 'var(--deep-navy)'; }}
             >
               <div className="card-bg" />
-              <div style={{ fontSize: 18, flexShrink: 0, width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(201,168,76,0.08)', border: '1px solid var(--border)', transition: 'all 0.3s', position: 'relative', zIndex: 1 }}>
+              <div style={{ fontSize: 22, flexShrink: 0, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(201,168,76,0.08)', border: '1px solid var(--border)', transition: 'all 0.3s', position: 'relative', zIndex: 1 }}>
                 {condition.icon}
               </div>
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 2, position: 'relative', zIndex: 1 }}>
-                <span style={{ fontSize: 'clamp(13px, 1.4vw, 14px)', color: 'var(--cream)', fontWeight: 400, lineHeight: 1.4, fontFamily: "'Cormorant Garamond',serif" }}>{condition.label}</span>
-                <span className="arabic" style={{ fontSize: 'clamp(14px, 1.5vw, 15px)', color: 'var(--text-dim)', lineHeight: 1.5 }}>{condition.arabic}</span>
+                <span style={{ fontSize: 'clamp(16px, 1.8vw, 18px)', color: 'var(--cream)', fontWeight: 400, lineHeight: 1.4, fontFamily: "'Cormorant Garamond',serif" }}>{condition.label}</span>
+                <span className="arabic" style={{ fontSize: 'clamp(16px, 1.8vw, 18px)', color: 'var(--text-dim)', lineHeight: 1.5 }}>{condition.arabic}</span>
               </div>
             </button>
           ))}
@@ -77,7 +77,7 @@ export default function Conditions() {
 
         {/* Footer */}
         <div style={{ textAlign: 'center' }}>
-          <Link to="/all" className="btn-ghost" style={{ padding: '10px 24px', fontSize: 10 }}>Browse all 99 names instead</Link>
+          <Link to="/all" className="btn-ghost" style={{ padding: '12px 28px', fontSize: 13 }}>Browse all 99 names instead</Link>
         </div>
       </div>
     </div>

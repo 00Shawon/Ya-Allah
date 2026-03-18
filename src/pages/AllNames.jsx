@@ -71,13 +71,14 @@ export default function AllNames() {
               onMouseEnter={e => e.currentTarget.style.background = 'var(--navy)'}
               onMouseLeave={e => e.currentTarget.style.background = 'var(--deep-navy)'}
             >
-              <div style={{ fontFamily: "'Cinzel',serif", fontSize: 8, letterSpacing: '0.3em', color: 'var(--gold)', opacity: 0.5 }}>{String(name.number).padStart(2,'0')}</div>
-              <span className="arabic" style={{ fontSize: 'clamp(22px, 4vw, 28px)', lineHeight: 1.3, background: 'linear-gradient(135deg,var(--gold-pale),var(--gold))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', overflow: 'hidden', display: 'block' }}>{name.arabic}</span>
-              <div style={{ fontFamily: "'Cinzel',serif", fontSize: 9, letterSpacing: '0.15em', color: 'var(--gold)', textTransform: 'uppercase', opacity: 0.7 }}>{name.transliteration}</div>
-              <div style={{ fontSize: 12, color: 'var(--cream)', fontStyle: 'italic', lineHeight: 1.4, fontWeight: 300 }}>{name.meaning}</div>
-              <div style={{ display: 'flex', gap: 4, marginTop: 4, flexWrap: 'wrap' }}>
-                {name.conditions.slice(0,3).map(cid => { const cond = CONDITIONS.find(c => c.id === cid); return cond ? <span key={cid} style={{ fontSize: 11, opacity: 0.5 }} title={cond.label}>{cond.icon}</span> : null; })}
+              <div style={{ fontFamily: "'Cinzel',serif", fontSize: 11, letterSpacing: '0.3em', color: 'var(--gold)', opacity: 0.5 }}>{String(name.number).padStart(2,'0')}</div>
+              <span className="arabic" style={{ fontSize: 'clamp(26px, 4vw, 32px)', lineHeight: 1.3, background: 'linear-gradient(135deg,var(--gold-pale),var(--gold))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', overflow: 'hidden', display: 'block' }}>{name.arabic}</span>
+              <div style={{ fontFamily: "'Cinzel',serif", fontSize: 11, letterSpacing: '0.15em', color: 'var(--gold)', textTransform: 'uppercase', opacity: 0.7 }}>{name.transliteration}</div>
+              <div style={{ fontSize: 'clamp(14px, 1.5vw, 15px)', color: 'var(--cream)', fontStyle: 'italic', lineHeight: 1.4, fontWeight: 300 }}>{name.meaning}</div>
+              <div style={{ display: 'flex', gap: 6, marginTop: 4, flexWrap: 'wrap' }}>
+                {name.conditions.slice(0,3).map(cid => { const cond = CONDITIONS.find(c => c.id === cid); return cond ? <span key={cid} style={{ fontSize: 13, opacity: 0.5 }} title={cond.label}>{cond.icon}</span> : null; })}
               </div>
+              <button className="view-details-btn">View Details →</button>
             </div>
           ))}
         </div>

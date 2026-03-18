@@ -57,22 +57,22 @@ export default function Results() {
               onMouseLeave={e => e.currentTarget.style.background = 'var(--deep-navy)'}
             >
               <div style={{ padding: 'clamp(24px, 4vw, 32px)', position: 'relative', zIndex: 1 }}>
-                <div style={{ fontFamily: "'Cinzel',serif", fontSize: 9, letterSpacing: '0.3em', color: 'var(--gold)', marginBottom: 16, opacity: 0.6 }}>{String(name.number).padStart(2,'0')}</div>
+                <div style={{ fontFamily: "'Cinzel',serif", fontSize: 12, letterSpacing: '0.3em', color: 'var(--gold)', marginBottom: 16, opacity: 0.6 }}>{String(name.number).padStart(2,'0')}</div>
                 <div style={{ marginBottom: 16 }}>
-                  <span className="arabic" style={{ fontSize: 'clamp(28px, 5vw, 36px)', lineHeight: 1.4, background: 'linear-gradient(135deg,var(--gold-pale),var(--gold))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'block', textAlign: 'right', overflow: 'hidden', width: '100%' }}>{name.arabic}</span>
-                  <span style={{ fontFamily: "'Cinzel',serif", fontSize: 11, letterSpacing: '0.2em', color: 'var(--gold)', textTransform: 'uppercase', opacity: 0.7 }}>{name.transliteration}</span>
+                  <span className="arabic" style={{ fontSize: 'clamp(32px, 5vw, 40px)', lineHeight: 1.4, background: 'linear-gradient(135deg,var(--gold-pale),var(--gold))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', display: 'block', textAlign: 'right', overflow: 'hidden', width: '100%' }}>{name.arabic}</span>
+                  <span style={{ fontFamily: "'Cinzel',serif", fontSize: 13, letterSpacing: '0.2em', color: 'var(--gold)', textTransform: 'uppercase', opacity: 0.7 }}>{name.transliteration}</span>
                 </div>
-                <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid var(--border)' }}>
-                  <h3 style={{ fontSize: 'clamp(18px, 3vw, 20px)', fontWeight: 500, color: 'var(--white)', marginBottom: 8, fontFamily: "'Cormorant Garamond',serif" }}>{name.meaning}</h3>
-                  <p className="line-clamp-3" style={{ fontSize: 'clamp(13px, 1.5vw, 14px)', color: 'var(--text-mid)', lineHeight: 1.7, fontStyle: 'italic', fontWeight: 300 }}>{name.meaning_deep}</p>
+                <div style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid var(--border)' }}>
+                  <h3 style={{ fontSize: 'clamp(20px, 3.5vw, 24px)', fontWeight: 500, color: 'var(--white)', marginBottom: 10, fontFamily: "'Cormorant Garamond',serif" }}>{name.meaning}</h3>
+                  <p className="line-clamp-3" style={{ fontSize: 'clamp(15px, 1.8vw, 16px)', color: 'var(--text-mid)', lineHeight: 1.7, fontStyle: 'italic', fontWeight: 300 }}>{name.meaning_deep}</p>
                 </div>
-                <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontFamily: "'Cinzel',serif", fontSize: 9, letterSpacing: '0.3em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: 8, opacity: 0.7 }}>Call upon this name</div>
-                  <p className="line-clamp-3" style={{ fontSize: 'clamp(13px, 1.5vw, 14px)', color: 'var(--cream)', lineHeight: 1.7, fontWeight: 300 }}>{name.how_to_call}</p>
+                <div style={{ marginBottom: 20 }}>
+                  <div style={{ fontFamily: "'Cinzel',serif", fontSize: 11, letterSpacing: '0.3em', color: 'var(--gold)', textTransform: 'uppercase', marginBottom: 10, opacity: 0.7 }}>Call upon this name</div>
+                  <p className="line-clamp-3" style={{ fontSize: 'clamp(15px, 1.8vw, 16px)', color: 'var(--cream)', lineHeight: 1.7, fontWeight: 300 }}>{name.how_to_call}</p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontFamily: "'Cinzel',serif", fontSize: 9, letterSpacing: '0.15em', color: 'var(--text-dim)', textTransform: 'uppercase' }}>{name.quran_reference}</span>
-                  <button className="name-read-more" style={{ background: 'none', border: 'none', fontFamily: "'Cinzel',serif", fontSize: 9, letterSpacing: '0.15em', color: 'var(--gold)', cursor: 'pointer', textTransform: 'uppercase', padding: 0 }}>Reflection →</button>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+                  <span style={{ fontFamily: "'Cinzel',serif", fontSize: 11, letterSpacing: '0.15em', color: 'var(--text-dim)', textTransform: 'uppercase' }}>{name.quran_reference}</span>
+                  <button className="name-read-more">Full Reflection →</button>
                 </div>
               </div>
               <div className="name-card-glow" />
