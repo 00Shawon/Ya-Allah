@@ -11,8 +11,8 @@
   --gold-pale:  #f5e6b8;
   --cream:      #e8dfc8;
   --white:      #f8f3e8;
-  --text-dim:   rgba(248,243,232,0.55);
-  --text-mid:   rgba(248,243,232,0.75);
+  --text-dim:   rgb(249, 236, 209);
+  --text-mid:   rgba(216, 213, 205);
   --border:     rgba(201,168,76,0.2);
   
   /* Responsive Spacing & Typography */
