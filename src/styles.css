@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --midnight:   #0a0e1a;
+  --deep-navy:  #0d1528;
+  --navy:       #111c35;
+  --navy-light: #1a2845;
+  --gold:       #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-pale:  #f5e6b8;
+  --cream:      #e8dfc8;
+  --white:      #f8f3e8;
+  --text-dim:   rgba(248,243,232,0.55);
+  --text-mid:   rgba(248,243,232,0.75);
+  --border:     rgba(201,168,76,0.2);
+  
+  /* Responsive Spacing & Typography */
+  --nav-pad: 20px 40px;
+  --section-pad: 120px 48px 80px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-pad: 15px 20px;
+    --section-pad: 80px 24px 60px;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:var(--midnight);color:var(--white);font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(ellipse at 20% 20%,rgba(201,168,76,.04) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(201,168,76,.03) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(26,40,69,.8) 0%,transparent 60%);pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.03)' stroke-width='0.5'%3E%3Cpolygon points='40,5 75,25 75,55 40,75 5,55 5,25'/%3E%3Cpolygon points='40,15 65,28 65,52 40,65 15,52 15,28'/%3E%3Cline x1='40' y1='5' x2='40' y2='75'/%3E%3Cline x1='5' y1='25' x2='75' y2='55'/%3E%3Cline x1='5' y1='55' x2='75' y2='25'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;z-index:0;}
+#root{position:relative;z-index:1;}
+
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--midnight);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+.arabic {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow: visible;
+  line-height: 2.2;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  display: block;
+}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
+@keyframes rotateSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+.animate-in{animation:fadeInUp 0.7s ease forwards;}
+.delay-1{animation-delay:0.1s;opacity:0;}.delay-2{animation-delay:0.2s;opacity:0;}.delay-3{animation-delay:0.3s;opacity:0;}.delay-4{animation-delay:0.4s;opacity:0;}.delay-5{animation-delay:0.5s;opacity:0;}.delay-6{animation-delay:0.6s;opacity:0;}.delay-7{animation-delay:0.7s;opacity:0;}.delay-8{animation-delay:0.8s;opacity:0;}
+.rotate-slow{animation:rotateSlow 60s linear infinite;}
+
+.gold-shimmer{background:linear-gradient(135deg,var(--gold-pale) 0%,var(--gold) 40%,var(--gold-light) 70%,var(--gold-pale) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s linear infinite;}
+
+.corner-decor{position:relative;}
+.corner-decor::before,.corner-decor::after{content:'';position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid;opacity:0.45;}
+.corner-decor::before{top:-1px;left:-1px;border-width:1px 0 0 1px;}
+.corner-decor::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0;}
+
+.name-card-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.06) 0%,transparent 70%);opacity:0;transition:opacity 0.4s;pointer-events:none;}
+.name-card:hover .name-card-glow{opacity:1;}
+.name-read-more{opacity:0;transform:translateX(-8px);transition:opacity 0.3s,transform 0.3s;}
+.name-card:hover .name-read-more{opacity:1;transform:translateX(0);}
+
+.card-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--card-color,#c9a84c) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none;}
+.condition-card:hover .card-bg{opacity:0.05;}
+
+.btn-primary{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;padding:16px 40px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:color 0.3s ease;background:transparent;}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform 0.3s ease;z-index:-1;}
+.btn-primary:hover::before{transform:translateX(0);}
+.btn-primary:hover{color:var(--midnight);}
+.btn-primary:hover .arrow{transform:translateX(4px);}
+.arrow{font-size:16px;transition:transform 0.3s;}
+
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.3s ease;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+.all-card{position:relative;overflow:hidden;}
+.all-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform 0.3s;}
+.all-card:hover::after{transform:scaleX(1);}
+
+.line-clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-clamp: 3;overflow:hidden;}
+
+.filter-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .filter-scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
